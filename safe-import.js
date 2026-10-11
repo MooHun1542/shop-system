@@ -16,9 +16,9 @@
       typeof p.category === 'string' && typeof p.price === 'number' && Number.isFinite(p.price) && p.price >= 0) &&
     new Set(data.products.map(p => p.id)).size === data.products.length &&
     data.sales.every(s => s && Array.isArray(s.items) &&
-      Number.isFinite(Number(s.total)) && Number(s.total) >= 0 &&
+      typeof s.total === 'number' && Number.isFinite(s.total) && s.total >= 0 &&
       s.items.every(i => i && typeof i.name === 'string' &&
-        Number.isFinite(Number(i.price)) && Number(i.price) >= 0 &&
+        typeof i.price === 'number' && Number.isFinite(i.price) && i.price >= 0 &&
         Number.isInteger(Number(i.qty)) && Number(i.qty) > 0)));
   input.onchange = null;
   input.addEventListener('change', event => {
