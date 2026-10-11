@@ -13,7 +13,7 @@
     Array.isArray(data.products) && Array.isArray(data.sales) &&
     data.products.every(p => p && typeof p.id === 'string' && p.id.length &&
       typeof p.name === 'string' && p.name.trim().length &&
-      typeof p.category === 'string' && Number.isFinite(Number(p.price)) && Number(p.price) >= 0) &&
+      typeof p.category === 'string' && typeof p.price === 'number' && Number.isFinite(p.price) && p.price >= 0) &&
     new Set(data.products.map(p => p.id)).size === data.products.length &&
     data.sales.every(s => s && Array.isArray(s.items) &&
       Number.isFinite(Number(s.total)) && Number(s.total) >= 0 &&
