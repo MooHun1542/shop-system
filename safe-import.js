@@ -54,7 +54,7 @@
       if (previous !== null) localStorage.setItem(RECOVERY_KEY, previous);
       localStorage.setItem(KEY, JSON.stringify(pending));
     } catch (_) {
-      alert('ไม่สามารถบันทึกข้อมูลสำรองหรือข้อมูลนำเข้าได้ ข้อมูลเดิมยังไม่ถูกเปลี่ยน');
+      alert('ไม่สามารถนำเข้าข้อมูลได้ กรุณาตรวจสอบพื้นที่จัดเก็บและสำรองข้อมูลเดิม');
       return;
     }
     pending = null;
